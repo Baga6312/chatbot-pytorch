@@ -47,7 +47,7 @@ class ChatDataSet(Dataset):
         self.y_data = Y_trains  
     #dataset[idx]    
     def __getitem__(self, index): 
-        return self.x_data[idx], self.y_data[idx]
+        return self.x_data[index], self.y_data[index]
     
     def __len__(self) : 
         return self.n_samples 
@@ -55,4 +55,4 @@ class ChatDataSet(Dataset):
 #Hyper parameters 
 batch_size = 8 
 dataset = ChatDataSet()
-train_loader = DataLoader(dataset=dataset, batch_size=batch_size. shuffle = True , num_workers = 2) 
+train_loader = DataLoader(dataset=dataset, batch_size=batch_size , shuffle = True , num_workers = 2)
