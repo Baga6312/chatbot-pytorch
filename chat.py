@@ -3,15 +3,15 @@ import json
 
 import torch
 
-from model import NeuralNet
-from nltk_utils import bag_word, tokenize
+from lib.model import NeuralNet
+from lib.nltk_utils import bag_word, tokenize
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-with open('intense.json', 'r') as json_data:
+with open('data/intense.json', 'r') as json_data:
     intents = json.load(json_data)
 
-FILE = "data.pth"
+FILE = "data/data.pth"
 data = torch.load(FILE)
 
 input_size = data["input_size"]
