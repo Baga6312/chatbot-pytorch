@@ -33,5 +33,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy application code
 COPY . .
 
+
+RUN python -c "import nltk; nltk.download('punkt_tab')"
+
 # Default command
 CMD ["python", "chat.py"]
